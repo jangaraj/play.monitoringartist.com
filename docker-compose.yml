@@ -1,7 +1,7 @@
 version: '2'
 services:
   play-proxy:
-    image: monitoringartist/play.monitoringartist.com
+    image: monitoringartist/play-proxy:latest
     volumes:
       - /etc/localtime:/etc/localtime:ro
     ports:
@@ -9,7 +9,7 @@ services:
     links:
      - play-zabbix:zabbix
   play-zabbix-db:
-    image: monitoringartist/zabbix-db-mariadb
+    image: monitoringartist/zabbix-db-mariadb:latest
     volumes:
       - /etc/localtime:/etc/localtime:ro
     environment:
@@ -27,3 +27,7 @@ services:
       - ZS_DBHost=zabbix.db
       - ZS_DBUser=zabbix
       - ZS_DBPassword=my_password
+  play-grafana:
+    image: monitoringartist/grafana-xxl:latest
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
