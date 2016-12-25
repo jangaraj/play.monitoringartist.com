@@ -9,6 +9,8 @@ services:
     links:
      - play-zabbix:play-zabbix
      - play-grafana:play-grafana
+     - play-vector:play-vector
+     - play-cadvisor:play-cadvisor
   play-zabbix-db:
     image: monitoringartist/zabbix-db-mariadb:latest
     volumes:
@@ -28,6 +30,14 @@ services:
       - ZS_DBHost=zabbix.db
       - ZS_DBUser=zabbix
       - ZS_DBPassword=my_password
+  play-zabbix-agent:
+    image: monitoringartist/zabbix-agent-xxl-limited:latest
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /:/rootfs
+      - /var/run:/var/run
+    ports:
+      - 10050:10050
   play-grafana:
     image: monitoringartist/grafana-xxl:latest
     volumes:
@@ -42,4 +52,12 @@ services:
       - GF_SECURITY_ADMIN_USER=admin
     ports:
       - 3000:3000
-
+  play-vector:
+    image: netflixoss/vector:latest
+  play-cadvisor:
+    image: google/cadvisor:latest
+    volumes:
+      - "/:/rootfs:ro"
+      - "/var/run:/var/run:rw"
+      - "/sys:/sys:ro"
+      - "/var/lib/docker/:/var/lib/docker:ro"
