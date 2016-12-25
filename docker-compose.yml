@@ -5,7 +5,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
     ports:
-      - "80:80"
+      - 80:80
     links:
      - play-zabbix:play-zabbix
      - play-grafana:play-grafana
@@ -33,4 +33,13 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
     environment:
-      - GF_SERVER_ROOT_URL=%(protocol)s://%(domain)s:/grafana
+      - GF_SERVER_ROOT_URL=%(protocol)s://%(domain)s:/grafana/
+      - GF_SESSION_PROVIDER=memory
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_USERS_ALLOW_ORG_CREATE=false
+      - GF_USERS_ALLOW_SIGN_UP=false
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_SECURITY_ADMIN_USER=admin
+    ports:
+      - 3000:3000
+
