@@ -6,6 +6,6 @@ RUN \
   apk add -U py-pip && \
   pip install 'docker-compose==1.9.0'
 
-CMD docker-compose up -d -f /docker-compose.yml
+CMD docker-compose up -d --force-recreate
 
 ADD docker-compose.yml /

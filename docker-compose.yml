@@ -1,29 +1,28 @@
 version: '2'
 services:
-  proxy:
+  play-proxy:
     image: monitoringartist/play.monitoringartist.com
     volumes:
       - /etc/localtime:/etc/localtime:ro
     ports:
       - "80:80"
     links:
-     - zabbix:zabbix
-  zabbix-db:
+     - play-zabbix:zabbix
+  play-zabbix-db:
     image: monitoringartist/zabbix-db-mariadb
     volumes:
       - /etc/localtime:/etc/localtime:ro
     environment:
       - MARIADB_USER=zabbix
       - MARIADB_PASS=my_password
-  zabbix:
+  play-zabbix:
     image: monitoringartist/zabbix-xxl:latest
     depends_on:
-      - zabbix-db
-      - "10051:10051"
+      - play-zabbix-db
     volumes:
       - /etc/localtime:/etc/localtime:ro
     links:
-      - zabbix-db:zabbix.db
+      - play-zabbix-db:zabbix.db
     environment:
       - ZS_DBHost=zabbix.db
       - ZS_DBUser=zabbix
