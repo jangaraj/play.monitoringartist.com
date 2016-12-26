@@ -40,11 +40,14 @@ services:
       - 10050:10050
   play-grafana:
     image: monitoringartist/grafana-xxl:latest
+    depends_on:
+      - play-grafana-data
     volumes:
       - /etc/localtime:/etc/localtime:ro
+    volumes_from:
+      - play-grafana-data
     environment:
       - GF_SERVER_ROOT_URL=%(protocol)s://%(domain)s:/grafana/
-      - GF_SESSION_PROVIDER=memory
       - GF_AUTH_ANONYMOUS_ENABLED=true
       - GF_USERS_ALLOW_ORG_CREATE=false
       - GF_USERS_ALLOW_SIGN_UP=false
@@ -52,6 +55,8 @@ services:
       - GF_SECURITY_ADMIN_USER=admin
     ports:
       - 3000:3000
+  play-grafana-data:
+    image: monitoringartist/play-grafana-data:latest
   play-vector:
     image: netflixoss/vector:latest
   play-cadvisor:
