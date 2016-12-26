@@ -24,6 +24,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="icon" href="/favicon.png">
 
@@ -46,11 +47,14 @@
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <!-- ul class="nav navbar-nav">
+                <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">About</a>
+                        <a href="#faq">FAQ</a>
                     </li>
-                </ul -->
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+                </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
@@ -77,27 +81,37 @@
                     <img class="img-responsive" src="http://placehold.it/700x400" alt="">
                 </a>
                 <h3>
-                    <a href="/zabbix/" target="_blank">Zabbix</a>
+                    <a href="/zabbix/zabbix.php?action=dashboard.view" target="_blank">Zabbix <i class="fa fa-external-link"></i></a>
                 </h3>
-                <p><a href="/zabbix/index.php" target="_blank">Full admin</a>: Admin/zabbix<br />Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                <p>
+                  Docker image: <a href="https://hub.docker.com/r/monitoringartist/zabbix-xxl/" target="_blank">monitoringartist/zabbix-xxl</a><br />
+                  Full admin: <a href="/zabbix/index.php" target="_blank">login/password: Admin/zabbix</a><br />
+                  Open source ultimate enterprise-level software designed for real-time monitoring of millions of metrics.
+                </p>
             </div>
             <div class="col-md-4 portfolio-item">
                 <a href="#">
                     <img class="img-responsive" src="http://placehold.it/700x400" alt="">
                 </a>
                 <h3>
-                    <a href="/cadvisor/containers/" target="_blank">cAdvisor</a>
+                    <a href="/cadvisor/containers/" target="_blank">cAdvisor <i class="fa fa-external-link"></i></a>
                 </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                <p>
+                  Docker image: <a href="https://hub.docker.com/r/google/cadvisor/" target="_blank">google/cadvisor</a><br />
+                  Analyzes resource usage and performance characteristics of running containers.
+                </p>
             </div>
             <div class="col-md-4 portfolio-item">
                 <a href="#">
                     <img class="img-responsive" src="http://placehold.it/700x400" alt="">
                 </a>
                 <h3>
-                    <a href="/vector/" target="_blank">Vector</a>
+                    <a href="/vector/" target="_blank">Vector <i class="fa fa-external-link"></i></a>
                 </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                <p>
+                  Docker image: <a href="https://hub.docker.com/r/netflixoss/vector/" target="_blank">netflixoss/vector</a><br />
+                  Vector is an on-host performance monitoring framework which exposes hand picked high resolution metrics to every engineer’s browser.
+                </p>
             </div>
         </div>
         <!-- /.row -->
@@ -109,9 +123,13 @@
                     <img class="img-responsive" src="http://placehold.it/700x400" alt="">
                 </a>
                 <h3>
-                    <a href="/grafana/" target="_blank">Grafana</a>
+                    <a href="/grafana/" target="_blank">Grafana <i class="fa fa-external-link"></i></a>
                 </h3>
-                <p><a href="/grafana/login?redirect=%2F" target="_blank">Full admin</a>: admin/admin<br />Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                <p>
+                  Docker image: <a href="https://hub.docker.com/r/monitoringartist/grafana-xxl/" target="_blank">monitoringartist/grafana-xxl</a><br />
+                  Full admin: <a href="/grafana/login?redirect=%2F" target="_blank">login/password: admin/admin</a><br />
+                  Perfect visualization tool with all preinstalled plugins from Grafana.net
+                </p>
             </div>
         </div>
 
