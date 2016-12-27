@@ -67,9 +67,7 @@
         <!-- Page Header -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Available monitoring tools
-                    <small></small>
-                </h1>
+                <h1 class="page-header">Online available monitoring tools</h1>
             </div>
         </div>
         <!-- /.row -->
@@ -134,6 +132,76 @@
             </div>
         </div>
 
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">Offline available monitoring tools</h2>
+                <small>Start complete monitoring playground on your Docker host:</small>
+                <pre>docker run --rm -ti -v /var/run/:/var/run/ monitoringartist/play.monitoringartist.com</pre>
+
+                <small>Stop monitoring playground on your Docker host:</small>
+                <pre>docker rm -f $(docker ps -a | grep ' playmonitoringartistcom_play-' | awk '{print $1}')</pre>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Projects Row -->
+        <div class="row">
+            <div class="col-md-4 portfolio-item">
+                <a href="/elasticsearch/" target="_blank">
+                    <img class="img-responsive" src="img/elasticsearch.png" alt="">
+                </a>
+                <h3>
+                    <a href="/elasticsearch/" target="_blank">Elasticsearch <i class="fa fa-external-link"></i></a>
+                </h3>
+                <p>
+                  Docker image: <a href="https://hub.docker.com/_/elasticsearch/" target="_blank">elasticsearch</a><br />
+                  xxx
+                </p>
+            </div>
+            <div class="col-md-4 portfolio-item">
+                <a href="/kibana/" target="_blank">
+                    <img class="img-responsive" src="img/kibana.png" alt="">
+                </a>
+                <h3>
+                    <a href="/kibana/" target="_blank">Kibana <i class="fa fa-external-link"></i></a>
+                </h3>
+                <p>
+                  Docker image: <a href="https://hub.docker.com/_/kibana/" target="_blank">kibana</a><br />
+                  xxx
+                </p>
+            </div>
+            <div class="col-md-4 portfolio-item">
+                <a href="/cadvisor/containers/" target="_blank">
+                    <img class="img-responsive" src="img/logstash.png" alt="">
+                </a>
+                <h3>
+                    <a href="/cadvisor/containers/" target="_blank">Logstash <i class="fa fa-external-link"></i></a>
+                </h3>
+                <p>
+                  Docker image: <a href="hhttps://hub.docker.com/_/logstash/" target="_blank">logstash</a><br />
+                  xxx
+                </p>
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">FAQ</h2>
+                <small>xxx</small>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">About</h2>
+                <small>xxx</small>
+            </div>
+        </div>
+        <!-- /.row -->
+
         <!-- hr -->
 
         <!-- Pagination -->
@@ -166,13 +234,13 @@
         </div -->
         <!-- /.row -->
 
-        <hr>
+        <!-- hr -->
 
         <!-- Footer -->
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Monitoring Artist 2017</p>
+                    <p>Copyright &copy; <a href="http://www.monitoringartist.com/" target="_blank">Monitoring Artist</a> 2017</p>
                 </div>
             </div>
             <!-- /.row -->
