@@ -6,10 +6,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Monitoring tool playground: Grafana, Zabbix, cAdvisor, Vector, ...">
+    <meta name="description" content="Monitoring playground: Grafana, Zabbix, cAdvisor, Vector, ...">
     <meta name="author" content="Monitoring Artist - www.monitoringartist.com">
 
-    <title>Monitoring tool playground: Grafana, Zabbix, cAdvisor, Vector, ...</title>
+    <title>Monitoring playground: Grafana, Zabbix, cAdvisor, Vector, ...</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -43,7 +43,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Monitoring Playground</a>
+                <a class="navbar-brand" href="#">Monitoring playground</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -77,8 +77,8 @@
         <!-- Projects Row -->
         <div class="row">
             <div class="col-md-4 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+                <a href="/zabbix/zabbix.php?action=dashboard.view">
+                    <img class="img-responsive" src="img/zabbix.png" alt="">
                 </a>
                 <h3>
                     <a href="/zabbix/zabbix.php?action=dashboard.view" target="_blank">Zabbix <i class="fa fa-external-link"></i></a>
@@ -90,8 +90,21 @@
                 </p>
             </div>
             <div class="col-md-4 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+                <a href="/grafana/">
+                    <img class="img-responsive" src="img/grafana.png" alt="">
+                </a>
+                <h3>
+                    <a href="/grafana/" target="_blank">Grafana <i class="fa fa-external-link"></i></a>
+                </h3>
+                <p>
+                  Docker image: <a href="https://hub.docker.com/r/monitoringartist/grafana-xxl/" target="_blank">monitoringartist/grafana-xxl</a><br />
+                  Full admin: <a href="/grafana/login?redirect=%2F" target="_blank">login/password: admin/admin</a><br />
+                  Visualization tool with all plugins from Grafana.net
+                </p>
+            </div>
+            <div class="col-md-4 portfolio-item">
+                <a href="/cadvisor/containers/">
+                    <img class="img-responsive" src="img/cadvisor.png" alt="">
                 </a>
                 <h3>
                     <a href="/cadvisor/containers/" target="_blank">cAdvisor <i class="fa fa-external-link"></i></a>
@@ -101,9 +114,15 @@
                   Analyzes resource usage and performance characteristics of running containers.
                 </p>
             </div>
-            <div class="col-md-4 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+
+        </div>
+        <!-- /.row -->
+
+        <!-- Projects Row -->
+        <div class="row">
+           <div class="col-md-4 portfolio-item">
+                <a href="/vector/">
+                    <img class="img-responsive" src="img/vector.png" alt="">
                 </a>
                 <h3>
                     <a href="/vector/" target="_blank">Vector <i class="fa fa-external-link"></i></a>
@@ -111,24 +130,6 @@
                 <p>
                   Docker image: <a href="https://hub.docker.com/r/netflixoss/vector/" target="_blank">netflixoss/vector</a><br />
                   Vector is an on-host performance monitoring framework which exposes hand picked high resolution metrics to every engineer’s browser.
-                </p>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <!-- Projects Row -->
-        <div class="row">
-            <div class="col-md-4 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3>
-                    <a href="/grafana/" target="_blank">Grafana <i class="fa fa-external-link"></i></a>
-                </h3>
-                <p>
-                  Docker image: <a href="https://hub.docker.com/r/monitoringartist/grafana-xxl/" target="_blank">monitoringartist/grafana-xxl</a><br />
-                  Full admin: <a href="/grafana/login?redirect=%2F" target="_blank">login/password: admin/admin</a><br />
-                  Perfect visualization tool with all preinstalled plugins from Grafana.net
                 </p>
             </div>
         </div>
