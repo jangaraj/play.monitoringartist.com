@@ -11,6 +11,8 @@ services:
      - play-grafana:play-grafana
      - play-vector:play-vector
      - play-cadvisor:play-cadvisor
+     - play-elasticsearch:play-elasticsearch
+     - play-kibana:play-kibana
   play-zabbix-db:
     image: monitoringartist/zabbix-db-mariadb:latest
     volumes:
@@ -30,6 +32,8 @@ services:
       - ZS_DBHost=zabbix.db
       - ZS_DBUser=zabbix
       - ZS_DBPassword=my_password
+      - XXL_zapix=true
+      - XXL_grapher=true
   play-zabbix-agent:
     image: monitoringartist/zabbix-agent-xxl-limited:latest
     volumes:
@@ -66,3 +70,24 @@ services:
       - "/var/run:/var/run:rw"
       - "/sys:/sys:ro"
       - "/var/lib/docker/:/var/lib/docker:ro"
+      - /etc/localtime:/etc/localtime:ro
+  play-elasticsearch:
+    image: elasticsearch:latest
+    ports:
+      - "9200:9200"
+    environment:
+      ES_JAVA_OPTS: "-Xms1g -Xmx1g"
+    command: -E bootstrap.ignore_system_bootstrap_checks=true -E transport.host=localhost
+  play-kibana:
+    image: kibana:latest
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 5601:5601
+    depends_on:
+      - play-elasticsearch
+    environment:
+      ELASTICSEARCH_URL: http://play-elasticsearch:9200
+      NODE_OPTIONS: "--max-old-space-size=300"
+    links:
+     - play-elasticsearch:play-elasticsearch

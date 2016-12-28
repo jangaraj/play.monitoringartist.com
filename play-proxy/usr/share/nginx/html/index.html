@@ -6,10 +6,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Monitoring playground: Grafana, Zabbix, cAdvisor, Vector, ...">
+    <meta name="description" content="Monitoring playground: Grafana, Zabbix, cAdvisor, Vector, Elasticsearch, Logstash, Kibana, ...">
     <meta name="author" content="Monitoring Artist - www.monitoringartist.com">
 
-    <title>Monitoring playground: Grafana, Zabbix, cAdvisor, Vector, ...</title>
+    <title>Monitoring playground: Grafana, Zabbix, cAdvisor, Vector, Elasticsearch, Logstash, Kibana, ...</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -43,7 +43,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Monitoring playground</a>
+                <a class="navbar-brand" href="index.html">Monitoring playground</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -53,6 +53,9 @@
                     </li>
                     <li>
                         <a href="#about">About</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/monitoringartist/play.monitoringartist.com" target="_blank">Star and form me on GitHub</a>
                     </li>
                 </ul>
             </div>
@@ -67,7 +70,10 @@
         <!-- Page Header -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Online available monitoring tools</h1>
+                <h1 class="xpage-header">Online available monitoring tools</h1>
+            </div>
+            <div class="col-lg-12">
+                <div class="sectionhr"></div>
             </div>
         </div>
         <!-- /.row -->
@@ -83,8 +89,9 @@
                 </h3>
                 <p>
                   Docker image: <a href="https://hub.docker.com/r/monitoringartist/zabbix-xxl/" target="_blank">monitoringartist/zabbix-xxl</a><br />
+                  Exposed ports: 10051<br />
                   Full admin: <a href="/zabbix/index.php" target="_blank">login/password: Admin/zabbix</a><br />
-                  Open source ultimate enterprise-level software designed for real-time monitoring of millions of metrics.
+                  Full stack open server/agent/agentless monitoring tool.
                 </p>
             </div>
             <div class="col-md-4 portfolio-item">
@@ -96,8 +103,9 @@
                 </h3>
                 <p>
                   Docker image: <a href="https://hub.docker.com/r/monitoringartist/grafana-xxl/" target="_blank">monitoringartist/grafana-xxl</a><br />
+                  Exposed ports: N/A<br />
                   Full admin: <a href="/grafana/login?redirect=%2F" target="_blank">login/password: admin/admin</a><br />
-                  Visualization tool with all plugins from Grafana.net
+                  Visual/alerting tool with all plugins from Grafana.net
                 </p>
             </div>
             <div class="col-md-4 portfolio-item">
@@ -109,7 +117,8 @@
                 </h3>
                 <p>
                   Docker image: <a href="https://hub.docker.com/r/google/cadvisor/" target="_blank">google/cadvisor</a><br />
-                  Analyzes resource usage and performance characteristics of running containers.
+                  Exposed ports: N/A<br />
+                  Tool for collecting and shipping (Docker) container metrics.
                 </p>
             </div>
 
@@ -127,19 +136,25 @@
                 </h3>
                 <p>
                   Docker image: <a href="https://hub.docker.com/r/netflixoss/vector/" target="_blank">netflixoss/vector</a><br />
-                  Vector is an on-host performance monitoring framework which exposes hand picked high resolution metrics to every engineer’s browser.
+                  Exposed ports: N/A<br />
+                  View host metrics directly in the browser.
                 </p>
             </div>
         </div>
 
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="page-header">Offline available monitoring tools</h2>
+                <h2 class="xpage-header">Offline available monitoring tools</h2>
+            </div>
+            <div class="col-lg-12">
+                <div class="sectionhr"></div>
+            </div>
+            <div class="col-lg-12">
                 <small>Start complete monitoring playground on your Docker host:</small>
-                <pre>docker run --rm -ti -v /var/run/:/var/run/ monitoringartist/play.monitoringartist.com</pre>
+                <pre>docker run --rm -ti -v /var/run/:/var/run/ monitoringartist/play.monitoringartist.com start</pre>
 
-                <small>Stop monitoring playground on your Docker host:</small>
-                <pre>docker rm -f $(docker ps -a | grep ' playmonitoringartistcom_play-' | awk '{print $1}')</pre>
+                <small>Stop and delete monitoring playground Docker containers:</small>
+                <pre>docker run --rm -ti -v /var/run/:/var/run/ monitoringartist/play.monitoringartist.com stop</pre>
             </div>
         </div>
         <!-- /.row -->
@@ -155,7 +170,8 @@
                 </h3>
                 <p>
                   Docker image: <a href="https://hub.docker.com/_/elasticsearch/" target="_blank">elasticsearch</a><br />
-                  xxx
+                  Exposed ports: 9200<br />
+                  A search engine based on Lucene, perfect for logs.
                 </p>
             </div>
             <div class="col-md-4 portfolio-item">
@@ -167,7 +183,8 @@
                 </h3>
                 <p>
                   Docker image: <a href="https://hub.docker.com/_/kibana/" target="_blank">kibana</a><br />
-                  xxx
+                  Exposed ports: N/A<br />
+                  Visualize documents from Elasticsearch.
                 </p>
             </div>
             <div class="col-md-4 portfolio-item">
@@ -179,7 +196,8 @@
                 </h3>
                 <p>
                   Docker image: <a href="hhttps://hub.docker.com/_/logstash/" target="_blank">logstash</a><br />
-                  xxx
+                  Exposed ports: N/A<br />
+                  Ship logs to Elasticsearch.
                 </p>
             </div>
 
@@ -188,21 +206,31 @@
 
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="page-header">FAQ</h2>
-                <small>xxx</small>
+                <h2 class="xpage-header">FAQ</h2><a name="faq"></a>
+            </div>
+            <div class="col-lg-12">
+                <div class="sectionhr"></div>
+            </div>
+            <div class="col-lg-12">
+               <small>xxx</small>
             </div>
         </div>
         <!-- /.row -->
 
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="page-header">About</h2>
-                <small>xxx</small>
+                <h2 class="xpage-header">About</h2><a name="about"></a>
+            </div>
+            <div class="col-lg-12">
+                <div class="sectionhr"></div>
+            </div>
+            <div class="col-lg-12">
+               <small>xxx</small>
             </div>
         </div>
         <!-- /.row -->
 
-        <!-- hr -->
+        <!-- hr class="sectionhr" / -->
 
         <!-- Pagination -->
         <!-- div class="row text-center">
@@ -216,15 +244,6 @@
                     </li>
                     <li>
                         <a href="#">2</a>
-                    </li>
-                    <li>
-                        <a href="#">3</a>
-                    </li>
-                    <li>
-                        <a href="#">4</a>
-                    </li>
-                    <li>
-                        <a href="#">5</a>
                     </li>
                     <li>
                         <a href="#">&raquo;</a>
