@@ -78,10 +78,16 @@ services:
     environment:
       ES_JAVA_OPTS: "-Xms1g -Xmx1g"
     command: -E bootstrap.ignore_system_bootstrap_checks=true -E transport.host=localhost
+  play-kibana-config:
+    image: monitoringartist/play-kibana-config:latest
   play-kibana:
     image: kibana:latest
+    depends_on:
+      - play-kibana-config
     volumes:
       - /etc/localtime:/etc/localtime:ro
+    volumes_from:
+      - play-kibana-config
     ports:
       - 5601:5601
     depends_on:
@@ -91,3 +97,4 @@ services:
       NODE_OPTIONS: "--max-old-space-size=300"
     links:
      - play-elasticsearch:play-elasticsearch
+    command: --config /etc/kibana/kibana.yml
