@@ -94,7 +94,7 @@ services:
       - play-elasticsearch
     environment:
       ELASTICSEARCH_URL: http://play-elasticsearch:9200
-      NODE_OPTIONS: "--max-old-space-size=300"
+      NODE_OPTIONS: "--max-old-space-size=600"
     links:
      - play-elasticsearch:play-elasticsearch
     command: --config /etc/kibana/kibana.yml
