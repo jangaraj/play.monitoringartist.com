@@ -116,7 +116,8 @@ services:
   play-logspout:
     image: bekt/logspout-logstash
     environment:
-      ROUTE_URIS: logstash://play-logstash:5000
+      ROUTE_URIS: logstash+tcp://play-logstash:5000
+      LOGSTASH_TAGS: docker,playground
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     depends_on:
