@@ -115,6 +115,7 @@ services:
     entrypoint: logstash -f /etc/logstash/conf.d/logstash.conf
   play-logspout:
     image: bekt/logspout-logstash
+    restart: on-failure
     environment:
       ROUTE_URIS: logstash+tcp://play-logstash:5000
       LOGSTASH_TAGS: docker,playground
