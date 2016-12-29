@@ -101,7 +101,7 @@ services:
   play-logstash-config:
     image: monitoringartist/play-logstash-config:latest
   play-logstash:
-    image: logsstash:latest
+    image: logstash:latest
     ports:
       - 5000:5000
     depends_on:
