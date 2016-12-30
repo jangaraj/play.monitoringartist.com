@@ -14,6 +14,14 @@ services:
      - play-elasticsearch:play-elasticsearch
      - play-kibana:play-kibana
      - play-prometheus:play-prometheus
+    depends_on:
+     - play-zabbix
+     - play-grafana
+     - play-vector
+     - play-cadvisor
+     - play-elasticsearch
+     - play-kibana
+     - play-prometheus
   play-zabbix-db:
     image: monitoringartist/zabbix-db-mariadb:latest
     volumes:
