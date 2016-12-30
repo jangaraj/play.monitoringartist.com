@@ -13,6 +13,7 @@ services:
      - play-cadvisor:play-cadvisor
      - play-elasticsearch:play-elasticsearch
      - play-kibana:play-kibana
+     - play-prometheus:play-prometheus
   play-zabbix-db:
     image: monitoringartist/zabbix-db-mariadb:latest
     volumes:
@@ -125,3 +126,25 @@ services:
       - play-logstash
     links:
       - play-logstash:play-logstash
+  play-prometheus-config:
+    image: monitoringartist/play-prometheus-config:latest
+  play-prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - 9090:9090
+    depends_on:
+      - play-cadvisor
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    volumes_from:
+      - play-prometheus-config
+    links:
+      - play-cadvisor:play-cadvisor
+      - play-node-exporter:play-node-exporter
+    command:
+      - '-config.file=/etc/prometheus/prometheus.yml'
+      - '-storage.local.path=/prometheus'
+  play-node-exporter:
+    image: prom/node-exporter:latest
+    ports:
+      - 9100:9100
