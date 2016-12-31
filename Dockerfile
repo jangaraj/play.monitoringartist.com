@@ -8,7 +8,18 @@ ADD docker-compose.yml /
 RUN \
   chmod +x /run.sh && \
   apk add -U py-pip docker && \
-  pip install 'docker-compose==1.9.0'
+  pip install 'docker-compose==1.9.0' && \
+  rm -rf $(apk info -L iptables) && \
+  rm -rf $(apk info -L git) && \
+  rm -rf $(apk info -L libssh2) && \
+  rm -rf $(apk info -L iptables) && \
+  rm -rf $(apk info -L libmnl) && \
+  rm -rf $(apk info -L libnftnl-libs) && \
+  rm -rf $(apk info -L xz-libs) && \
+  rm -rf $(apk info -L pcre) && \
+  rm -rf $(apk info -L libseccomp) && \
+  rm -rf $(apk info -L libcurl) && \
+  rm -rf $(apk info -L xz)
 
 ENTRYPOINT ["/run.sh"]
 
