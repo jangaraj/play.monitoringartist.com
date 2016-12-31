@@ -1,6 +1,9 @@
 #!/bin/sh
 
 PAR=${1:-start}
+if [ "$PAR" == "/bin/sh" ]; then
+  PAR=start
+fi
 
 if [ "$PAR" == "start" ]; then
   docker-compose pull && docker-compose -p play-monitoringartist-com up -d --force-recreate --remove-orphans -t 1
