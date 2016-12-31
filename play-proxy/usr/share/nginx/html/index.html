@@ -55,7 +55,7 @@
                         <a href="#about">About</a>
                     </li>
                     <li>
-                        <a href="https://github.com/monitoringartist/play.monitoringartist.com" target="_blank">Star and form me on GitHub</a>
+                        <a href="https://github.com/monitoringartist/play.monitoringartist.com" target="_blank">Star and fork me on GitHub</a>
                     </li>
                 </ul>
             </div>
@@ -70,7 +70,7 @@
         <!-- Page Header -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="xpage-header">Online available monitoring tools</h1>
+                <h1 class="xpage-header">Available monitoring tools</h1>
             </div>
             <div class="col-lg-12">
                 <div class="sectionhr"></div>
@@ -91,7 +91,7 @@
                   Docker image: <a href="https://hub.docker.com/r/monitoringartist/zabbix-xxl/" target="_blank">monitoringartist/zabbix-xxl</a><br />
                   Exposed ports: 10051<br />
                   Full admin: <a href="/zabbix/index.php" target="_blank">login/password: Admin/zabbix</a><br />
-                  Full stack open server/agent/agentless monitoring tool.
+                  Full stack server/agent/agentless monitoring tool.
                 </p>
             </div>
             <div class="col-md-4 portfolio-item">
@@ -109,39 +109,6 @@
                 </p>
             </div>
             <div class="col-md-4 portfolio-item">
-                <a href="/cadvisor/containers/" target="_blank">
-                    <img class="img-responsive" src="img/cadvisor.png" alt="">
-                </a>
-                <h3>
-                    <a href="/cadvisor/containers/" target="_blank">cAdvisor <i class="fa fa-external-link"></i></a>
-                </h3>
-                <p>
-                  Docker image: <a href="https://hub.docker.com/r/google/cadvisor/" target="_blank">google/cadvisor</a><br />
-                  Exposed ports: N/A<br />
-                  Tool for collecting and shipping (Docker) container metrics.
-                </p>
-            </div>
-
-        </div>
-        <!-- /.row -->
-
-        <!-- Projects Row -->
-        <div class="row">
-           <div class="col-md-4 portfolio-item">
-                <a href="/vector/" target="_blank">
-                    <img class="img-responsive" src="img/vector.png" alt="">
-                </a>
-                <h3>
-                    <a href="/vector/" target="_blank">Vector <i class="fa fa-external-link"></i></a>
-                </h3>
-                <p>
-                  Docker image: <a href="https://hub.docker.com/r/netflixoss/vector/" target="_blank">netflixoss/vector</a><br />
-                  Exposed ports: N/A<br />
-                  View host metrics directly in the browser.
-                </p>
-            </div>
-
-           <div class="col-md-4 portfolio-item">
                 <a href="/prometheus/" target="_blank">
                     <img class="img-responsive" src="img/prometheus.png" alt="">
                 </a>
@@ -150,25 +117,9 @@
                 </h3>
                 <p>
                   Docker image: <a href="https://hub.docker.com/r/prom/prometheus/" target="_blank">prom/prometheus</a><br />
-                  Exposed ports: N/A<br />
-                  xxx
+                  Exposed ports: 9100<br />
+                  Full stack server/agent/agentless monitoring tool.
                 </p>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-lg-12">
-                <h2 class="xpage-header">Offline available monitoring tools</h2>
-            </div>
-            <div class="col-lg-12">
-                <div class="sectionhr"></div>
-            </div>
-            <div class="col-lg-12">
-                <small>Start complete monitoring playground on your Docker host:</small>
-                <pre>docker run --rm -ti -v /var/run/:/var/run/ monitoringartist/play.monitoringartist.com start</pre>
-
-                <small>Stop and delete monitoring playground Docker containers:</small>
-                <pre>docker run --rm -ti -v /var/run/:/var/run/ monitoringartist/play.monitoringartist.com stop</pre>
             </div>
         </div>
         <!-- /.row -->
@@ -215,6 +166,54 @@
                 </p>
             </div>
 
+        </div>
+        <!-- /.row -->
+
+        <!-- Projects Row -->
+        <div class="row">
+           <div class="col-md-4 portfolio-item">
+               <a href="/cadvisor/containers/" target="_blank">
+                   <img class="img-responsive" src="img/cadvisor.png" alt="">
+               </a>
+               <h3>
+                   <a href="/cadvisor/containers/" target="_blank">cAdvisor <i class="fa fa-external-link"></i></a>
+               </h3>
+               <p>
+                 Docker image: <a href="https://hub.docker.com/r/google/cadvisor/" target="_blank">google/cadvisor</a><br />
+                 Exposed ports: N/A<br />
+                 Tool for collecting and shipping (Docker) container metrics.
+               </p>
+           </div>
+           <div class="col-md-4 portfolio-item">
+                <a href="/vector/" target="_blank">
+                    <img class="img-responsive" src="img/vector.png" alt="">
+                </a>
+                <h3>
+                    <a href="/vector/" target="_blank">Vector <i class="fa fa-external-link"></i></a>
+                </h3>
+                <p>
+                  Docker image: <a href="https://hub.docker.com/r/netflixoss/vector/" target="_blank">netflixoss/vector</a><br />
+                  Exposed ports: N/A<br />
+                  View host metrics directly in the browser.
+                </p>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="xpage-header">Start your own monitoring playground</h2>
+            </div>
+            <div class="col-lg-12">
+                <div class="sectionhr"></div>
+            </div>
+            <div class="col-lg-12">
+                <small>Start complete monitoring playground on your Docker host:</small>
+                <pre>docker run --rm -ti -v /var/run/:/var/run/ monitoringartist/play.monitoringartist.com start</pre>
+
+                <small>Stop and delete monitoring playground Docker containers:</small>
+                <pre>docker run --rm -ti -v /var/run/:/var/run/ monitoringartist/play.monitoringartist.com stop</pre>
+            </div>
         </div>
         <!-- /.row -->
 

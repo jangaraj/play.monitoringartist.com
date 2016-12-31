@@ -2,10 +2,14 @@
 
 FROM alpine:latest
 
+ADD run.sh /
+ADD docker-compose.yml /
+
 RUN \
+  chmod +x /run.sh && \
   apk add -U py-pip && \
   pip install 'docker-compose==1.9.0'
 
-CMD docker-compose pull && docker-compose -p play-monitoringartist-com up -d --force-recreate --remove-orphans -t 1 --no-color
+ENTRYPOINT ["/run.sh"]
 
-ADD docker-compose.yml /
+CMD start
