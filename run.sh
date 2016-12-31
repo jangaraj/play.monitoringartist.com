@@ -1,5 +1,9 @@
 #!/bin/sh
 
+echo $1
+echo $2
+echo $3
+
 PAR=${3:-start}
 
 if [ "$PAR" == "start" ]; then
