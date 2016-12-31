@@ -7,7 +7,7 @@ ADD docker-compose.yml /
 
 RUN \
   chmod +x /run.sh && \
-  apk add -U py-pip && \
+  apk add -U py-pip docker && \
   pip install 'docker-compose==1.9.0'
 
 ENTRYPOINT ["/run.sh"]
