@@ -68,6 +68,14 @@ services:
       - GF_SECURITY_ADMIN_USER=admin
     ports:
       - 3000:3000
+    links:
+     - play-zabbix:play-zabbix
+     - play-elasticsearch:play-elasticsearch
+     - play-prometheus:play-prometheus
+    depends_on:
+     - play-zabbix
+     - play-elasticsearch
+     - play-prometheus
   play-grafana-data:
     image: monitoringartist/play-grafana-data:latest
   play-vector:
