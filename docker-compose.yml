@@ -92,7 +92,6 @@ services:
       - /etc/localtime:/etc/localtime:ro
     depends_on:
      - play-zabbix
-     - play-prometheus
      - play-netdata
   play-elasticsearch:
     image: elasticsearch:latest

@@ -20,8 +20,6 @@ RUN \
 ADD run.sh /
 ADD docker-compose.yml /
 
-RUN chmod +x /run.sh
-
 ENTRYPOINT ["/run.sh"]
 
 CMD start
