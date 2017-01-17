@@ -14,6 +14,7 @@ services:
      - play-elasticsearch:play-elasticsearch
      - play-kibana:play-kibana
      - play-prometheus:play-prometheus
+     - play-netdata:play-netdata
     depends_on:
      - play-zabbix
      - play-grafana
@@ -22,6 +23,7 @@ services:
      - play-elasticsearch
      - play-kibana
      - play-prometheus
+     - play-netdata
   play-zabbix-db:
     image: monitoringartist/zabbix-db-mariadb:latest
     volumes:
@@ -164,3 +166,10 @@ services:
     image: prom/node-exporter:latest
     ports:
       - 9100:9100
+  play-netdata:
+    image: titpetric/netdata:latest
+    volumes:
+      - "/proc:/host/proc:ro"
+      - "/sys:/host/sys:ro"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - /etc/localtime:/etc/localtime:ro
