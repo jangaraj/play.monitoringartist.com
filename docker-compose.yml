@@ -90,6 +90,10 @@ services:
       - "/sys:/sys:ro"
       - "/var/lib/docker/:/var/lib/docker:ro"
       - /etc/localtime:/etc/localtime:ro
+    depends_on:
+     - play-zabbix
+     - play-prometheus
+     - play-netdata
   play-elasticsearch:
     image: elasticsearch:latest
     ports:
