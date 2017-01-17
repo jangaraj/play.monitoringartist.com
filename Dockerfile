@@ -2,11 +2,7 @@
 
 FROM alpine:latest
 
-ADD run.sh /
-ADD docker-compose.yml /
-
 RUN \
-  chmod +x /run.sh && \
   apk add -U py2-pip docker && \
   pip install 'docker-compose==1.9.0' && \
   rm -rf $(apk info -L iptables) && \
@@ -20,6 +16,11 @@ RUN \
   rm -rf $(apk info -L libseccomp) && \
   rm -rf $(apk info -L libcurl) && \
   rm -rf $(apk info -L xz)
+
+ADD run.sh /
+ADD docker-compose.yml /
+
+RUN chmod +x /run.sh
 
 ENTRYPOINT ["/run.sh"]
 
