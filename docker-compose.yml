@@ -91,7 +91,7 @@ services:
       - "/var/lib/docker/:/var/lib/docker:ro"
       - /etc/localtime:/etc/localtime:ro
     depends_on:
-     - play-zabbix
+     - play-zabbix-agent
      - play-netdata
   play-elasticsearch:
     image: elasticsearch:latest
