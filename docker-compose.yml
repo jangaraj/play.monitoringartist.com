@@ -164,6 +164,7 @@ services:
     command:
       - '-config.file=/etc/prometheus/prometheus.yml'
       - '-storage.local.path=/prometheus'
+      - '-web.route-prefix=/prometheus'
   play-node-exporter:
     image: prom/node-exporter:latest
     ports:
